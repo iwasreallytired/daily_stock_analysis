@@ -490,7 +490,7 @@ Lagging: {bottom_sectors_text if bottom_sectors_text else "N/A"}"""
                 if not indices_text
                 else ""
             )
-            return f"""You are a professional US/A/H market analyst. Please produce a concise US market recap report based on the data below.
+            return f"""You are a professional US/A/H market analyst. Please produce a concise US market recap report based on the data below. And reported them in Chinese.
 
 [Requirements]
 - Output pure Markdown only
