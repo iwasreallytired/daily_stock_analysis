@@ -2224,7 +2224,10 @@ class NotificationService:
         
         # 转换 **bold** 为 *bold*
         result = re.sub(r'\*\*(.+?)\*\*', r'*\1*', result)
-        
+
+        # 转义那些“不是为了加粗”而存在的孤立星号
+        result = re.sub(r'(?<!\w)\*(?!\w)', r'\*', result)
+       
         # 转义特殊字符（Telegram Markdown 需要）
         # 注意：不转义已经用于格式的 * _ `
         for char in ['[', ']', '(', ')']:
